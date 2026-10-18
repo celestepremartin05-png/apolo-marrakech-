@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Contact et Calendrier · Apolo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+<style>
+.page-head{padding-block:clamp(3rem,7vw,5rem) 1rem}
+.page-head h1{font-size:clamp(2.6rem,6vw,4.4rem)}
+.legend{display:flex;flex-wrap:wrap;gap:.6rem 1.6rem;margin:1.6rem 0 1.4rem;font-size:.92rem}
+.legend span{display:flex;align-items:center;gap:.55rem}
+.legend i{width:12px;height:12px;border-radius:50% 50% 0 0;display:inline-block}
+.cal{border:1px solid var(--gold);background:var(--ivory);display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr)}
+@media(max-width:820px){.cal{grid-template-columns:1fr}}
+.cal iframe{width:100%;height:600px;border:0;grid-column:1/-1}
+.month{padding:clamp(1rem,3vw,1.8rem);min-width:0}
+.mhead{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem}
+.mhead h3{font-size:1.9rem;text-transform:capitalize}
+.mnav{width:44px;height:44px;border:1px solid var(--line);background:transparent;color:var(--olive);font-size:1.5rem;line-height:1;cursor:pointer}
+.mnav:hover{background:var(--sand)}
+.grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px}
+.dow span{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-ink);text-align:center;padding-bottom:.3rem}
+.day{aspect-ratio:1/1;min-height:40px;border:1px solid rgba(178,138,69,.22);padding:.3rem .35rem;display:flex;flex-direction:column;justify-content:space-between;font-size:.88rem;font-variant-numeric:tabular-nums;min-width:0;overflow:hidden}
+.day.out{border-color:transparent;color:transparent}
+.day.past{color:#9C9A86}
+.day.today{outline:2px solid var(--gold);outline-offset:-2px}
+.day .lbl{font-size:.58rem;letter-spacing:.06em;text-transform:uppercase;line-height:1.1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.day.stage{background:#454737;color:#F3EBDD;border-color:#454737}
+.day.brunch{background:#B28A45;color:#fff;border-color:#B28A45}
+.day.event{background:#B4632F;color:#fff;border-color:#B4632F}
+.day.room{background:#7F8F86;color:#fff;border-color:#7F8F86}
+@media(max-width:480px){.day .lbl{display:none}}
+.upcoming{border-left:1px solid var(--line);padding:clamp(1rem,3vw,1.8rem);display:grid;gap:1rem;align-content:start;min-width:0}
+@media(max-width:820px){.upcoming{border-left:0;border-top:1px solid var(--line)}}
+.upcoming ul{list-style:none;margin:0;padding:0;display:grid;gap:.9rem}
+.upcoming li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:.8rem;align-items:start}
+.upcoming i{width:12px;height:12px;margin-top:.45rem;border-radius:50% 50% 0 0}
+.upcoming strong{display:block;font-family:var(--f-display);font-weight:600;font-size:1.3rem;line-height:1.2}
+.upcoming span{font-size:.92rem;color:var(--olive-soft)}
+form{display:grid;gap:1rem;max-width:620px}
+.row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+@media(max-width:560px){.row{grid-template-columns:1fr}}
+label{display:grid;gap:.35rem;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-ink)}
+input,select,textarea{font:inherit;font-size:1rem;letter-spacing:normal;text-transform:none;color:var(--olive);background:var(--ivory);border:1px solid var(--line);padding:.75rem .8rem;width:100%}
+.access{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:2rem}
+.access h3{font-size:1.6rem;margin-bottom:.5rem}
+.access p{margin:0}
+.big{font-family:var(--f-display);font-size:1.9rem;font-weight:600;letter-spacing:.02em}
+.note{font-size:.9rem;color:var(--olive-soft)}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+<a class="brand" href="index.html"><img src="embleme_apolo.png" alt=""><span>APOLO<small>Domaine · Marrakech</small></span></a>
+<button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+<nav class="nav" id="menu" aria-label="Menu principal">
+<a href="index.html">Accueil</a>
+<a href="domaine.html">Le Domaine</a>
+<a href="experiences.html">Formations &amp; Spectacles</a>
+<a href="evenements.html">Événements &amp; Séjours</a>
+<a href="catherine.html">Catherine</a>
+<a href="contact.html" aria-current="page">Contact &amp; Calendrier</a>
+</nav>
+</div></header>
+
+<main>
+<section class="page-head"><div class="wrap intro">
+<div class="eyebrow">Venir au domaine</div>
+<h1>Contact &amp; Calendrier</h1>
+<div class="rule"></div>
+</div></section>
+
+<section id="calendrier" style="padding-top:1rem"><div class="wrap">
+<h2 style="font-size:clamp(1.9rem,4vw,2.6rem)">Le calendrier du domaine</h2>
+<div class="legend" aria-label="Légende">
+<span><i style="background:#454737"></i>Formations</span>
+<span><i style="background:#B28A45"></i>Brunchs spectacle</span>
+<span><i style="background:#B4632F"></i>Événements privés (domaine réservé)</span>
+<span><i style="background:#7F8F86"></i>Chambres</span>
+</div>
+<div class="cal" id="cal">
+<div class="month">
+<div class="mhead">
+<button type="button" id="prev" class="mnav" aria-label="Mois précédent">‹</button>
+<h3 id="mtitle">Octobre 2026</h3>
+<button type="button" id="next" class="mnav" aria-label="Mois suivant">›</button>
+</div>
+<div class="grid dow" aria-hidden="true"><span>Lun</span><span>Mar</span><span>Mer</span><span>Jeu</span><span>Ven</span><span>Sam</span><span>Dim</span></div>
+<div class="grid days" id="days" role="grid" aria-label="Jours du mois"></div>
+</div>
+<div class="upcoming">
+<div class="eyebrow">Prochaines dates</div>
+<ul id="list"></ul>
+<p class="note">Les autres dates sont annoncées au fur et à mesure sur Instagram. Pour une date précise, écrivez-nous à <a href="mailto:domaine.apolo@gmail.com">domaine.apolo@gmail.com</a>.</p>
+</div>
+</div>
+<p class="note" id="cal-link" hidden style="margin-top:.8rem"><a href="#" target="_blank" rel="noopener">Ouvrir le calendrier en grand</a></p>
+</div></section>
+
+<section id="demande" class="band"><div class="wrap split">
+<div class="intro">
+<div class="eyebrow">Réserver ou se renseigner</div>
+<h2 style="font-size:clamp(1.9rem,4vw,2.6rem)">Votre demande</h2>
+<div class="rule"></div>
+<p>Remplissez ces quelques champs : votre message est rédigé pour vous, prêt à envoyer par e-mail. Le domaine vous répond pour confirmer.</p>
+<p class="note">Vous pouvez aussi appeler le +212 6 66 10 89 41 ou écrire à domaine.apolo@gmail.com.</p>
+</div>
+<form id="f">
+<div class="row">
+<label for="pn">Prénom<input id="pn" autocomplete="given-name" placeholder="Votre prénom"></label>
+<label for="n">Nom<input id="n" autocomplete="family-name" placeholder="Votre nom"></label>
+</div>
+<label for="t">Votre demande<select id="t">
+<option>Formation / perfectionnement</option><option>Brunch spectacle</option><option>Événement privé</option><option>Séjour</option><option>Autre</option>
+</select></label>
+<div class="row">
+<label for="d">Date souhaitée<input id="d" type="date"></label>
+<label for="p">Nombre de personnes<input id="p" type="number" min="1" inputmode="numeric" placeholder="2"></label>
+</div>
+<label for="m">Message<textarea id="m" rows="4" placeholder="Votre niveau à cheval, vos questions…"></textarea></label>
+<div class="actions"><a class="btn" id="gmail" href="https://mail.google.com/mail/?view=cm&fs=1&to=domaine.apolo@gmail.com" target="_blank" rel="noopener">Envoyer avec Gmail</a><button class="btn ghost" id="copy" type="button">Copier le message</button></div>
+<p class="note" id="copied" style="margin:0" aria-live="polite">Le message est déjà rédigé : il ne reste qu'à appuyer sur Envoyer. Si rien ne s'ouvre, copiez le message et collez-le dans un e-mail à <strong>domaine.apolo@gmail.com</strong>.</p>
+</form>
+</div></section>
+
+<section><div class="wrap access">
+<div><h3>Nous trouver</h3><p>À côté de Marrakech<br>Route RP2017, tout près de la station Afriquia</p><p class="note" style="margin-top:.6rem">GPS : 31.46699, -7.87174</p><p style="margin-top:1rem"><a class="btn ghost" href="https://www.google.com/maps/search/?api=1&amp;query=31.46699,-7.87174" target="_blank" rel="noopener">Itinéraire</a></p></div>
+<div><h3>Nous appeler</h3><p class="big">+212 6 66 10 89 41</p><p class="note">Téléphone et WhatsApp</p></div>
+<div><h3>Nous suivre</h3><p><a href="https://www.instagram.com/domaine.apolo.marrakech/" target="_blank" rel="noopener">@domaine.apolo.marrakech</a></p><p class="note" style="margin-top:.4rem">Les nouvelles dates y sont annoncées en premier.</p></div>
+</div></section>
+</main>
+
+<footer class="foot"><div class="wrap">
+<div class="motto" style="margin-top:0;border-top:0;padding-top:0">Art · Connexion · Excellence</div>
+</div></footer>
+
+<script>
+/* Dates du domaine. type : stage | brunch | event | room. Dates au format AAAA-MM-JJ. */
+var DATES = [
+  {type:'stage', start:'2026-11-11', end:'2026-11-14', titre:'Formation & perfectionnement', detail:'4 jours'},
+  {type:'stage', start:'2026-12-07', end:'2026-12-10', titre:'Formation & perfectionnement', detail:'4 jours'},
+  /* Brunch chaque dimanche : « until » est la dernière date générée, à repousser ou à raccourcir. */
+  {type:'brunch', every:'sunday', start:'2026-11-01', until:'2027-10-31', titre:'Brunch spectacle', detail:'Brunch et spectacle équestre'}
+];
+/* Plus tard : coller ici l'adresse « intégrer » de l'agenda Google public du domaine. */
+var AGENDA_GOOGLE = '';
+(function(){
+  var TYPES={stage:{nom:'Formation',c:'#454737'},brunch:{nom:'Brunch spectacle',c:'#B28A45'},event:{nom:'Domaine réservé',c:'#B4632F'},room:{nom:'Chambres réservées',c:'#7F8F86'}};
+  var MOIS=['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
+  function d(s){var p=s.split('-');return new Date(+p[0],+p[1]-1,+p[2]);}
+  function key(x){return x.getFullYear()*10000+(x.getMonth()+1)*100+x.getDate();}
+  var today=new Date(); today=new Date(today.getFullYear(),today.getMonth(),today.getDate());
+  var byDay={};
+  DATES.forEach(function(e){var pas=e.every==='sunday'?7:1, fin=d(e.every?e.until:e.end);for(var x=d(e.start);x<=fin;x.setDate(x.getDate()+pas)){byDay[key(x)]=e;}});
+  var view=new Date(today.getFullYear(),today.getMonth(),1);
+  var days=document.getElementById('days'), title=document.getElementById('mtitle');
+  function render(){
+    title.textContent=MOIS[view.getMonth()]+' '+view.getFullYear();
+    days.replaceChildren();
+    var first=(view.getDay()+6)%7, n=new Date(view.getFullYear(),view.getMonth()+1,0).getDate();
+    for(var i=0;i<first;i++){var o=document.createElement('div');o.className='day out';days.appendChild(o);}
+    for(var j=1;j<=n;j++){
+      var x=new Date(view.getFullYear(),view.getMonth(),j), e=byDay[key(x)], c=document.createElement('div');
+      c.className='day'+(e?' '+e.type:'')+(x<today?' past':'')+(+x===+today?' today':'');
+      c.setAttribute('role','gridcell');
+      c.setAttribute('aria-label',j+' '+MOIS[view.getMonth()]+(e?' : '+TYPES[e.type].nom:' : libre'));
+      var num=document.createElement('span');num.textContent=j;c.appendChild(num);
+      if(e){var l=document.createElement('span');l.className='lbl';l.textContent=TYPES[e.type].nom;c.appendChild(l);}
+      days.appendChild(c);
+    }
+  }
+  document.getElementById('prev').addEventListener('click',function(){view.setMonth(view.getMonth()-1);render();});
+  document.getElementById('next').addEventListener('click',function(){view.setMonth(view.getMonth()+1);render();});
+  render();
+  var list=document.getElementById('list');
+  DATES.filter(function(e){return d(e.every?e.until:e.end)>=today;}).sort(function(a,b){return d(a.start)-d(b.start);}).forEach(function(e){
+    var s=d(e.start),f=d(e.end||e.start),li=document.createElement('li'),dot=document.createElement('i'),t=document.createElement('div');
+    dot.style.background=TYPES[e.type].c;
+    var quand=e.every?('Tous les dimanches dès le '+(s.getDate()===1?'1er':s.getDate())+' '+MOIS[s.getMonth()]):(+s===+f)?('Le '+s.getDate()+' '+MOIS[s.getMonth()]):('Du '+s.getDate()+(s.getMonth()!==f.getMonth()?' '+MOIS[s.getMonth()]:'')+' au '+f.getDate()+' '+MOIS[f.getMonth()]);
+    var st=document.createElement('strong');st.textContent=e.titre;
+    var sp=document.createElement('span');sp.textContent=quand+(e.detail?' · '+e.detail:'');
+    t.appendChild(st);t.appendChild(sp);li.appendChild(dot);li.appendChild(t);list.appendChild(li);
+  });
+  if(AGENDA_GOOGLE){
+    var cal=document.getElementById('cal');
+    var fr=document.createElement('iframe');
+    fr.src=AGENDA_GOOGLE; fr.title='Calendrier du domaine Apolo'; fr.loading='lazy';
+    cal.replaceChildren(fr);
+    var lk=document.getElementById('cal-link'); lk.hidden=false; lk.querySelector('a').href=AGENDA_GOOGLE;
+  }
+  var ids=['pn','n','t','d','p','m'], gm=document.getElementById('gmail'), full='';
+  function val(i){var e=document.getElementById(i);return e?e.value.trim():''}
+  function update(){
+    var nom=(val('pn')+' '+val('n')).trim();var parts=['Bonjour'+(nom?', je suis '+nom:'')+'.','Demande : '+val('t')+'.'];
+    if(val('d')){var x=val('d').split('-');parts.push('Date souhaitée : '+x[2]+'/'+x[1]+'/'+x[0]+'.');}
+    if(val('p')) parts.push('Nombre de personnes : '+val('p')+'.');
+    if(val('m')) parts.push(val('m'));
+    var sub=encodeURIComponent('Demande : '+val('t')), body=encodeURIComponent(parts.join(' '));
+    gm.href='https://mail.google.com/mail/?view=cm&fs=1&to=domaine.apolo@gmail.com&su='+sub+'&body='+body;
+    full='À : domaine.apolo@gmail.com\nObjet : Demande : '+val('t')+'\n\n'+parts.join(' ');
+  }
+  ids.forEach(function(i){var e=document.getElementById(i);e.addEventListener('input',update);e.addEventListener('change',update);});
+  document.getElementById('copy').addEventListener('click',function(){
+    var ok=function(){document.getElementById('copied').textContent='Message copié. Collez-le dans un e-mail à domaine.apolo@gmail.com.';};
+    var fb=function(){try{var t=document.createElement('textarea');t.value=full;t.style.position='fixed';t.style.opacity='0';document.body.appendChild(t);t.select();document.execCommand('copy');document.body.removeChild(t);ok();}catch(e){document.getElementById('copied').textContent='Copie impossible : écrivez directement à domaine.apolo@gmail.com.';}};
+    try{navigator.clipboard.writeText(full).then(ok,fb);}catch(e){fb();}
+  });
+  document.getElementById('f').addEventListener('submit',function(e){e.preventDefault();});
+  update();
+})();
+</script>
+<script>(function(){function up(){try{window.scrollTo(0,0);document.documentElement.scrollTop=0;document.body.scrollTop=0;}catch(e){}}
+try{if("scrollRestoration" in history)history.scrollRestoration="manual";}catch(e){}
+if(!location.hash){up();document.addEventListener("DOMContentLoaded",up);window.addEventListener("load",function(){up();setTimeout(up,60);setTimeout(up,300);});window.addEventListener("pageshow",up);}
+document.querySelectorAll(".nav a,.brand").forEach(function(a){a.addEventListener("click",function(e){var h=a.getAttribute("href")||"",p=location.pathname.split("/").pop()||"index.html";if(h===p||(h==="index.html"&&p==="")){e.preventDefault();window.scrollTo({top:0,behavior:"smooth"});var t=document.querySelector(".top"),m=document.querySelector(".menu-btn");if(t&&t.classList.contains("open")){t.classList.remove("open");if(m){m.setAttribute("aria-expanded","false");m.textContent="Menu";}}}});});})();</script>
+<script>(function(){var b=document.querySelector(".menu-btn"),h=document.querySelector(".top");if(!b||!h)return;b.addEventListener("click",function(){var o=h.classList.toggle("open");b.setAttribute("aria-expanded",o?"true":"false");b.textContent=o?"Fermer":"Menu";});})();</script>
+</body>
+</html>

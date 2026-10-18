@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Formations et Spectacles · Apolo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+<style>
+.page-head{padding-block:clamp(3rem,7vw,5rem) 1rem}
+.page-head h1{font-size:clamp(2.6rem,6vw,4.4rem)}
+.block .arch{aspect-ratio:4/5;width:100%;max-width:400px}
+.block h2{font-size:clamp(2.1rem,4.5vw,3.2rem)}
+.facts{list-style:none;margin:0;padding:0;display:grid;gap:.6rem}
+.facts li{display:flex;gap:.8rem;align-items:baseline}
+.facts li::before{content:"";flex:none;width:7px;height:7px;transform:rotate(45deg) translateY(-2px);border:1px solid var(--gold)}
+.dark .facts li::before{border-color:#D8B678}
+.pack{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:rgba(216,182,120,.35);border:1px solid rgba(216,182,120,.35)}
+.pack div{background:var(--olive);padding:1.6rem 1.3rem;display:grid;gap:.4rem}
+.pack strong{font-family:var(--f-display);font-weight:500;font-size:1.7rem;color:#E9CF9C}
+@media(max-width:640px){.pack{grid-template-columns:1fr}}
+.wide{margin-top:2rem;border:1px solid #D8B678;aspect-ratio:16/9;overflow:hidden}
+.wide img{width:100%;height:100%;object-fit:cover}
+@media(max-width:640px){.wide{aspect-ratio:4/3}}
+.trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(.5rem,2.5vw,1.6rem);margin-top:2.4rem}
+.trio .arch{aspect-ratio:2/3;max-width:none;width:100%}
+.trio .arch:nth-child(2){margin-top:2.5rem}
+@media(min-width:761px){.flip>:first-child{order:2}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+<a class="brand" href="index.html"><img src="embleme_apolo.png" alt=""><span>APOLO<small>Domaine · Marrakech</small></span></a>
+<button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+<nav class="nav" id="menu" aria-label="Menu principal">
+<a href="index.html">Accueil</a>
+<a href="domaine.html">Le Domaine</a>
+<a href="experiences.html" aria-current="page">Formations &amp; Spectacles</a>
+<a href="evenements.html">Événements &amp; Séjours</a>
+<a href="catherine.html">Catherine</a>
+<a href="contact.html">Contact &amp; Calendrier</a>
+</nav>
+</div></header>
+
+<main>
+<section class="page-head"><div class="wrap intro">
+<div class="eyebrow">Au domaine</div>
+<h1>Formations &amp; Spectacles</h1>
+<div class="rule"></div>
+<p class="lead">Apprendre, comprendre, observer et évoluer : améliorer sa technique.</p>
+</div></section>
+
+<section id="equestre" class="band"><div class="wrap">
+<div class="intro">
+<span class="tag soon" style="justify-self:start">Prochainement</span>
+<h2 style="font-size:clamp(2.1rem,4.5vw,3.2rem)">Expériences équestres</h2>
+<div class="rule"></div>
+<p class="lead">Monter, apprendre, comprendre le cheval : une relation qui se construit pas à pas, jusqu'à la connexion.</p>
+</div>
+<div class="trio">
+<div class="arch"><img src="photos/rouge-espagnol.jpg" alt="Cheval blanc au pas espagnol" style="object-position:62% 50%" loading="lazy"></div>
+<div class="arch"><img src="photos/blanc-pas.jpg" alt="Catherine en caftan rouge, à cheval" style="object-position:50% 40%" loading="lazy"></div>
+<div class="arch"><img src="photos/rouge-domaine.jpg" alt="Catherine en robe rouge, en spectacle" style="object-position:50% 70%" loading="lazy"></div>
+</div>
+</div></section>
+
+<section id="stages" class="block"><div class="wrap split">
+<div class="arch"><img src="photos/stage-blanc.jpg" alt="Catherine guide une jeune cavalière sur un cheval blanc pendant une formation" style="object-position:50% 40%" loading="lazy"></div>
+<div class="intro">
+<span class="tag open" style="justify-self:start">Dès maintenant</span>
+<h2>Formation &amp; perfectionnement</h2>
+<div class="rule"></div>
+<p>Plusieurs jours au domaine pour apprendre, se reconnecter et partager avec les chevaux.</p>
+<p style="font-family:var(--f-display);font-size:1.35rem;font-style:italic;color:var(--gold-ink)">Prochaines sessions : du 11 au 14 novembre, puis du 7 au 10 décembre</p>
+<ul class="facts">
+<li>Sessions de plusieurs jours</li>
+<li>Ouverts à tous, cavaliers ou non</li>
+<li>Demi-pension : petit-déjeuner et déjeuner inclus</li>
+<li>Dates et places disponibles dans le calendrier</li>
+</ul>
+<div class="actions" style="margin-top:.6rem"><a class="btn" href="contact.html#calendrier">Voir les prochaines dates</a><a class="btn ghost" href="contact.html#demande">Demander une place</a></div>
+</div>
+</div></section>
+
+<section id="spectacle" class="band block"><div class="wrap split flip">
+<div class="arch"><img src="photos/cath-spectacle-seule.jpg" alt="Catherine et son cheval en spectacle" style="object-position:50% 20%" loading="lazy"></div>
+<div class="intro">
+<span class="tag soon" style="justify-self:start">Prochainement</span>
+<h2>Le spectacle de Catherine</h2>
+<div class="rule"></div>
+<p>Catherine et ses chevaux présentent un spectacle équestre entre art et tradition. Il sera d'abord proposé lors des brunchs du domaine.</p>
+<p><a href="catherine.html">Qui est Catherine ?</a></p>
+</div>
+</div></section>
+
+<section id="brunch" class="dark"><div class="wrap">
+<div class="intro" style="margin-bottom:2.4rem">
+<span class="tag soon" style="justify-self:start">Prochainement</span>
+<h2 style="font-size:clamp(2.1rem,4.5vw,3.2rem);color:#E9CF9C">Brunch spectacle</h2>
+<div class="rule"></div>
+<p>Tous les dimanches, à partir du 1er novembre.</p>
+</div>
+<div class="pack">
+<div><strong>Le brunch</strong><span>Une table généreuse, servie au domaine.</span></div>
+<div><strong>Le spectacle</strong><span>Catherine et ses chevaux en représentation.</span></div>
+</div>
+<div class="wide"><img src="photos/brunch-buffet.jpg" alt="Le buffet du brunch sous l'olivier : couscous, salades, pain et tajine" style="object-position:50% 60%" loading="lazy"></div>
+<p style="margin-top:2rem;max-width:58ch">Chaque dimanche, dès le 1er novembre. Formules et tarifs sur demande.</p>
+<div class="actions" style="margin-top:1.2rem"><a class="btn on-dark" href="contact.html#calendrier">Voir le calendrier</a></div>
+</div></section>
+</main>
+
+<footer class="foot"><div class="wrap">
+<div class="cols">
+<div><h4>Nous trouver</h4><p>À côté de Marrakech<br>Route RP2017, près de la station Afriquia<br><a href="https://www.google.com/maps/search/?api=1&amp;query=31.46699,-7.87174" target="_blank" rel="noopener">Itinéraire Google Maps</a></p></div>
+<div><h4>Nous contacter</h4><p>Téléphone et WhatsApp<br><span style="font-size:1.15rem;letter-spacing:.04em">+212 6 66 10 89 41</span><br><a href="mailto:domaine.apolo@gmail.com">domaine.apolo@gmail.com</a></p></div>
+<div><h4>Nous suivre</h4><p><a href="https://www.instagram.com/domaine.apolo.marrakech/" target="_blank" rel="noopener">@domaine.apolo.marrakech</a><br>Les dates des formations et brunchs y sont annoncées en premier.</p></div>
+</div>
+<div class="motto">Art · Connexion · Excellence</div>
+</div></footer>
+<script>(function(){function up(){try{window.scrollTo(0,0);document.documentElement.scrollTop=0;document.body.scrollTop=0;}catch(e){}}
+try{if("scrollRestoration" in history)history.scrollRestoration="manual";}catch(e){}
+if(!location.hash){up();document.addEventListener("DOMContentLoaded",up);window.addEventListener("load",function(){up();setTimeout(up,60);setTimeout(up,300);});window.addEventListener("pageshow",up);}
+document.querySelectorAll(".nav a,.brand").forEach(function(a){a.addEventListener("click",function(e){var h=a.getAttribute("href")||"",p=location.pathname.split("/").pop()||"index.html";if(h===p||(h==="index.html"&&p==="")){e.preventDefault();window.scrollTo({top:0,behavior:"smooth"});var t=document.querySelector(".top"),m=document.querySelector(".menu-btn");if(t&&t.classList.contains("open")){t.classList.remove("open");if(m){m.setAttribute("aria-expanded","false");m.textContent="Menu";}}}});});})();</script>
+<script>(function(){var b=document.querySelector(".menu-btn"),h=document.querySelector(".top");if(!b||!h)return;b.addEventListener("click",function(){var o=h.classList.toggle("open");b.setAttribute("aria-expanded",o?"true":"false");b.textContent=o?"Fermer":"Menu";});})();</script>
+</body>
+</html>

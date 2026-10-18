@@ -1,0 +1,82 @@
+<!doctype html><html lang="fr"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box}body{margin:0;padding:0;font:14px -apple-system,sans-serif;background:#fff;color:#000}img{max-width:100%}</style></head><body>
+<title>Apolo Domaine Marrakech</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+<style>
+.hero{padding-block:clamp(2.5rem,7vw,5rem)}
+.hero .split{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}
+.hero-logo{width:min(250px,60vw)}
+.hero h1{font-size:clamp(2.3rem,5.4vw,3.9rem);margin-top:1.6rem}
+.hero .lead{margin:1.2rem 0 2rem;max-width:30ch}
+.hero .arch{aspect-ratio:3/4;width:100%;max-width:420px;justify-self:end}
+@media(max-width:760px){.hero .split{grid-template-columns:1fr}.hero .arch{justify-self:center;max-width:320px}}
+.now{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:1px;background:rgba(216,182,120,.35);border:1px solid rgba(216,182,120,.35);margin-top:2.4rem}
+.now a{background:var(--olive);padding:2rem 1.6rem;text-decoration:none;display:grid;gap:.7rem;align-content:start}
+.now a:hover{background:var(--olive-soft)}
+.now h3{font-size:1.9rem;color:#E9CF9C}
+.now p{margin:0;opacity:.92}
+.frags{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(.8rem,2.5vw,1.6rem);margin-top:2.4rem}
+.frags .arch{aspect-ratio:2/3}
+.frags .arch:nth-child(2){margin-top:2.5rem}
+@media(max-width:560px){.frags{grid-template-columns:repeat(2,minmax(0,1fr))}.frags .arch:nth-child(3){display:none}}
+</style>
+
+<header class="top"><div class="wrap">
+<a class="brand" href="index.html"><img src="embleme_apolo.png" alt=""><span>APOLO<small>Domaine · Marrakech</small></span></a>
+<button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+<nav class="nav" id="menu" aria-label="Menu principal">
+<a href="index.html" aria-current="page">Accueil</a>
+<a href="domaine.html">Le Domaine</a>
+<a href="experiences.html">Formations &amp; Spectacles</a>
+<a href="evenements.html">Événements &amp; Séjours</a>
+<a href="catherine.html">Catherine</a>
+<a href="contact.html">Contact &amp; Calendrier</a>
+</nav>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap split">
+<div>
+<img class="hero-logo" src="logo_apolo.png" alt="Apolo Marrakech">
+<h1>Un nouveau lieu ouvre ses portes</h1>
+<p class="lead">Un domaine d'exception aux portes de Marrakech, entre chevaux, nature et art de recevoir.</p>
+<div class="actions"><a class="btn" href="experiences.html">Découvrir les formations</a><a class="btn ghost" href="contact.html">Voir le calendrier</a></div>
+</div>
+<div class="arch"><img src="photos/rouge-cabre.jpg" alt="Catherine en robe rouge sur un cheval blanc cabré" style="object-position:33% 50%"></div>
+</div></section>
+
+<section class="dark"><div class="wrap">
+<div class="intro"><div class="eyebrow">En ce moment au domaine</div><div class="rule"></div></div>
+<div class="now">
+<a href="experiences.html"><span class="tag open" style="justify-self:start;color:var(--ivory);background:transparent;border-color:#D8B678">Dès maintenant</span><h3>Formation &amp; perfectionnement</h3><p>Plusieurs jours au contact des chevaux, ouverts aux cavaliers comme aux non-cavaliers.</p></a>
+<a href="experiences.html"><span class="tag soon" style="justify-self:start">Prochainement</span><h3>Brunch spectacle</h3><p>Un brunch et le spectacle équestre de Catherine, tous les dimanches dès le 1er novembre.</p></a>
+<a href="evenements.html"><span class="tag soon" style="justify-self:start">Prochainement</span><h3>Vos événements</h3><p>Mariages, réceptions, célébrations : un cadre rare pour vos moments importants.</p></a>
+</div>
+</div></section>
+
+<section><div class="wrap">
+<div class="intro"><div class="eyebrow">Le domaine</div><h2 style="font-size:clamp(2rem,4vw,2.9rem)">Quelques fragments, avant de venir le découvrir</h2><div class="rule"></div></div>
+<div class="frags">
+<div class="arch"><img src="photos/cath-fuchsia-reverence.jpg" alt="Catherine en caftan fuchsia, sur un alezan" style="object-position:45% 40%" loading="lazy"></div>
+<div class="arch"><img src="photos/blanc-envol.jpg" alt="Cheval alezan, la queue dans la lumière" style="object-position:38% 50%" loading="lazy"></div>
+<div class="arch"><img src="photos/cath-fuchsia-trot.jpg" alt="Catherine en caftan fuchsia, au trot sur un alezan" style="object-position:55% 40%" loading="lazy"></div>
+</div>
+<p style="margin-top:2rem"><a class="btn ghost" href="domaine.html">Entrer dans le domaine</a></p>
+</div></section>
+</main>
+
+<footer class="foot"><div class="wrap">
+<div class="cols">
+<div><h4>Nous trouver</h4><p>À côté de Marrakech<br>Route RP2017, près de la station Afriquia<br><a href="https://www.google.com/maps/search/?api=1&amp;query=31.46699,-7.87174" target="_blank" rel="noopener">Itinéraire Google Maps</a></p></div>
+<div><h4>Nous contacter</h4><p>Téléphone et WhatsApp<br><span style="font-size:1.15rem;letter-spacing:.04em">+212 6 66 10 89 41</span><br><a href="mailto:domaine.apolo@gmail.com">domaine.apolo@gmail.com</a></p></div>
+<div><h4>Nous suivre</h4><p><a href="https://www.instagram.com/domaine.apolo.marrakech/" target="_blank" rel="noopener">@domaine.apolo.marrakech</a><br>Les dates des formations et brunchs y sont annoncées en premier.</p></div>
+</div>
+<div class="motto">Art · Connexion · Excellence</div>
+</div></footer>
+<script>(function(){function up(){try{window.scrollTo(0,0);document.documentElement.scrollTop=0;document.body.scrollTop=0;}catch(e){}}
+try{if("scrollRestoration" in history)history.scrollRestoration="manual";}catch(e){}
+if(!location.hash){up();document.addEventListener("DOMContentLoaded",up);window.addEventListener("load",function(){up();setTimeout(up,60);setTimeout(up,300);});window.addEventListener("pageshow",up);}
+document.querySelectorAll(".nav a,.brand").forEach(function(a){a.addEventListener("click",function(e){var h=a.getAttribute("href")||"",p=location.pathname.split("/").pop()||"index.html";if(h===p||(h==="index.html"&&p==="")){e.preventDefault();window.scrollTo({top:0,behavior:"smooth"});var t=document.querySelector(".top"),m=document.querySelector(".menu-btn");if(t&&t.classList.contains("open")){t.classList.remove("open");if(m){m.setAttribute("aria-expanded","false");m.textContent="Menu";}}}});});})();</script>
+<script>(function(){var b=document.querySelector(".menu-btn"),h=document.querySelector(".top");if(!b||!h)return;b.addEventListener("click",function(){var o=h.classList.toggle("open");b.setAttribute("aria-expanded",o?"true":"false");b.textContent=o?"Fermer":"Menu";});})();</script>
+</body></html>

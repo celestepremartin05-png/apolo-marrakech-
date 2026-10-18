@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Le Domaine · Apolo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+<style>
+.page-head{padding-block:clamp(3rem,7vw,5rem) 0}
+.page-head h1{font-size:clamp(2.6rem,6vw,4.4rem)}
+.gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(.7rem,2vw,1.4rem);align-items:end}
+.gallery .arch:nth-child(1){aspect-ratio:2/3}
+.gallery .arch:nth-child(2){aspect-ratio:2/3.6}
+.gallery .arch:nth-child(3){aspect-ratio:2/3.2}
+.gallery .arch:nth-child(4){aspect-ratio:2/3.8}
+@media(max-width:640px){.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.lieux{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(.7rem,2vw,1.4rem);margin-top:2.4rem}
+.lieux figure{margin:0;display:grid;gap:.8rem}
+.lieux .arch{aspect-ratio:2/3}
+.lieux figcaption{text-align:center}
+@media(max-width:640px){.lieux{grid-template-columns:repeat(2,minmax(0,1fr))}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+<a class="brand" href="index.html"><img src="embleme_apolo.png" alt=""><span>APOLO<small>Domaine · Marrakech</small></span></a>
+<button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+<nav class="nav" id="menu" aria-label="Menu principal">
+<a href="index.html">Accueil</a>
+<a href="domaine.html" aria-current="page">Le Domaine</a>
+<a href="experiences.html">Formations &amp; Spectacles</a>
+<a href="evenements.html">Événements &amp; Séjours</a>
+<a href="catherine.html">Catherine</a>
+<a href="contact.html">Contact &amp; Calendrier</a>
+</nav>
+</div></header>
+
+<main>
+<section class="page-head"><div class="wrap intro">
+<div class="eyebrow">À côté de Marrakech</div>
+<h1>Le Domaine</h1>
+<div class="rule"></div>
+<p class="lead">Des chevaux, de l'espace et du calme, à quelques pas de la ville.</p>
+<p>Apolo est un lieu pensé pour ralentir : on y vient pour les chevaux, on y reste pour la lumière, la table et la piscine. Le domaine ouvre progressivement ses portes ; chaque saison apportera de nouvelles expériences.</p>
+</div></section>
+
+<section style="padding-top:clamp(2rem,5vw,3rem)"><div class="wrap">
+<div class="gallery">
+<div class="arch"><img src="photos/cath-arche-blanc.jpg" alt="Catherine en caftan rouge sur un cheval blanc" style="object-position:50% 45%" loading="lazy"></div>
+<div class="arch"><img src="photos/cavaliere-porche.jpg" alt="Une cavalière sur un cheval blanc devant le porche du domaine" style="object-position:50% 55%" loading="lazy"></div>
+<div class="arch"><img src="photos/blanc-reverence.jpg" alt="Révérence d'un cheval alezan" style="object-position:50% 50%" loading="lazy"></div>
+<div class="arch"><img src="photos/domaine-reflet.jpg" alt="Le domaine se reflète dans la piscine" style="object-position:40% 50%" loading="lazy"></div>
+</div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+<div class="intro"><div class="eyebrow">Les lieux</div><h2 style="font-size:clamp(2rem,4vw,2.9rem)">Une cour, un jardin, une piscine entre les oliviers</h2><div class="rule"></div></div>
+<div class="lieux">
+<figure><div class="arch"><img src="photos/lieu-piscine.jpg" alt="La piscine bordée de jarres terracotta et d'oliviers" style="object-position:50% 60%" loading="lazy"></div><figcaption class="eyebrow">La piscine</figcaption></figure>
+<figure><div class="arch"><img src="photos/lieu-cour.jpg" alt="La cour, fauteuils bleus et cheval sculpté orange" style="object-position:50% 62%" loading="lazy"></div><figcaption class="eyebrow">La cour</figcaption></figure>
+<figure><div class="arch"><img src="photos/lieu-allee.jpg" alt="L'allée d'oliviers menant au pavillon" style="object-position:50% 50%" loading="lazy"></div><figcaption class="eyebrow">L'allée</figcaption></figure>
+<figure><div class="arch"><img src="photos/domaine-piscine.jpg" alt="Le domaine : piscine, pergolas et voilages blancs" style="object-position:50% 48%" loading="lazy"></div><figcaption class="eyebrow">Les pergolas</figcaption></figure>
+</div>
+</div></section>
+
+<section class="band"><div class="wrap">
+<div class="intro"><div class="eyebrow">Les univers du domaine</div><h2 style="font-size:clamp(2rem,4vw,2.9rem)">Ce que vous trouverez à Apolo</h2><div class="rule"></div></div>
+<div class="offers">
+<a class="offer" href="experiences.html"><span class="tag open" style="justify-self:start">Dès maintenant</span><h3>Formation &amp; perfectionnement</h3><p>Plusieurs jours pour apprendre et partager avec les chevaux.</p></a>
+<a class="offer" href="experiences.html"><span class="tag soon" style="justify-self:start">Prochainement</span><h3>Spectacles équestres</h3><p>Le cheval en mouvement, entre art et tradition.</p></a>
+<a class="offer" href="experiences.html"><span class="tag soon" style="justify-self:start">Prochainement</span><h3>Brunch spectacle</h3><p>Brunch et spectacle équestre, tous les dimanches dès le 1er novembre.</p></a>
+<a class="offer" href="evenements.html"><span class="tag soon" style="justify-self:start">Prochainement</span><h3>Événements</h3><p>Mariages, réceptions et célébrations privées.</p></a>
+<a class="offer" href="evenements.html"><span class="tag soon" style="justify-self:start">Prochainement</span><h3>Séjours</h3><p>Quelques chambres pour dormir au cœur du domaine.</p></a>
+<a class="offer" href="experiences.html"><span class="tag soon" style="justify-self:start">Prochainement</span><h3>Expériences équestres</h3><p>Monter, apprendre, comprendre le cheval.</p></a>
+<div class="offer"><span class="tag soon" style="justify-self:start">Prochainement</span><h3>Confiance &amp; thérapie</h3><p>Se retrouver au contact des chevaux.</p></div>
+<div class="offer"><span class="tag soon" style="justify-self:start">Prochainement</span><h3>Boutique</h3><p>Produits, accessoires et matériel pour chevaux.</p></div>
+</div>
+</div></section>
+</main>
+
+<footer class="foot"><div class="wrap">
+<div class="cols">
+<div><h4>Nous trouver</h4><p>À côté de Marrakech<br>Route RP2017, près de la station Afriquia<br><a href="https://www.google.com/maps/search/?api=1&amp;query=31.46699,-7.87174" target="_blank" rel="noopener">Itinéraire Google Maps</a></p></div>
+<div><h4>Nous contacter</h4><p>Téléphone et WhatsApp<br><span style="font-size:1.15rem;letter-spacing:.04em">+212 6 66 10 89 41</span><br><a href="mailto:domaine.apolo@gmail.com">domaine.apolo@gmail.com</a></p></div>
+<div><h4>Nous suivre</h4><p><a href="https://www.instagram.com/domaine.apolo.marrakech/" target="_blank" rel="noopener">@domaine.apolo.marrakech</a><br>Les dates des formations et brunchs y sont annoncées en premier.</p></div>
+</div>
+<div class="motto">Art · Connexion · Excellence</div>
+</div></footer>
+<script>(function(){function up(){try{window.scrollTo(0,0);document.documentElement.scrollTop=0;document.body.scrollTop=0;}catch(e){}}
+try{if("scrollRestoration" in history)history.scrollRestoration="manual";}catch(e){}
+if(!location.hash){up();document.addEventListener("DOMContentLoaded",up);window.addEventListener("load",function(){up();setTimeout(up,60);setTimeout(up,300);});window.addEventListener("pageshow",up);}
+document.querySelectorAll(".nav a,.brand").forEach(function(a){a.addEventListener("click",function(e){var h=a.getAttribute("href")||"",p=location.pathname.split("/").pop()||"index.html";if(h===p||(h==="index.html"&&p==="")){e.preventDefault();window.scrollTo({top:0,behavior:"smooth"});var t=document.querySelector(".top"),m=document.querySelector(".menu-btn");if(t&&t.classList.contains("open")){t.classList.remove("open");if(m){m.setAttribute("aria-expanded","false");m.textContent="Menu";}}}});});})();</script>
+<script>(function(){var b=document.querySelector(".menu-btn"),h=document.querySelector(".top");if(!b||!h)return;b.addEventListener("click",function(){var o=h.classList.toggle("open");b.setAttribute("aria-expanded",o?"true":"false");b.textContent=o?"Fermer":"Menu";});})();</script>
+</body>
+</html>

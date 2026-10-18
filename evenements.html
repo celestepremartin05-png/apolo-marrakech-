@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Événements et Séjours · Apolo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+<style>
+.page-head{padding-block:clamp(3rem,7vw,5rem) 1rem}
+.page-head h1{font-size:clamp(2.6rem,6vw,4.4rem)}
+.block .arch{aspect-ratio:4/5;width:100%;max-width:400px}
+.block h2{font-size:clamp(2.1rem,4.5vw,3.2rem)}
+.facts{list-style:none;margin:0;padding:0;display:grid;gap:.6rem}
+.facts li{display:flex;gap:.8rem;align-items:baseline}
+.facts li::before{content:"";flex:none;width:7px;height:7px;transform:rotate(45deg) translateY(-2px);border:1px solid var(--gold)}
+@media(min-width:761px){.flip>:first-child{order:2}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+<a class="brand" href="index.html"><img src="embleme_apolo.png" alt=""><span>APOLO<small>Domaine · Marrakech</small></span></a>
+<button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+<nav class="nav" id="menu" aria-label="Menu principal">
+<a href="index.html">Accueil</a>
+<a href="domaine.html">Le Domaine</a>
+<a href="experiences.html">Formations &amp; Spectacles</a>
+<a href="evenements.html" aria-current="page">Événements &amp; Séjours</a>
+<a href="catherine.html">Catherine</a>
+<a href="contact.html">Contact &amp; Calendrier</a>
+</nav>
+</div></header>
+
+<main>
+<section class="page-head"><div class="wrap intro">
+<div class="eyebrow">Recevoir à Apolo</div>
+<h1>Événements &amp; Séjours</h1>
+<div class="rule"></div>
+<p class="lead">Un cadre rare pour célébrer, et quelques chambres pour rester.</p>
+</div></section>
+
+<section id="evenements" class="block"><div class="wrap split">
+<div class="arch"><img src="photos/evenement-table.jpg" alt="Des convives attablés dans le jardin, sous les parasols en paille" style="object-position:50% 50%" loading="lazy"></div>
+<div class="intro">
+<span class="tag soon" style="justify-self:start">Prochainement</span>
+<h2>Vos événements</h2>
+<div class="rule"></div>
+<p>Le domaine accueillera bientôt mariages, réceptions et célébrations privées. Chaque événement sera préparé sur mesure avec vous.</p>
+<ul class="facts">
+<li>Mariages et cérémonies</li>
+<li>Réceptions et célébrations privées</li>
+</ul>
+<div class="actions" style="margin-top:.6rem"><a class="btn" href="contact.html#demande">Parler de votre projet</a><a class="btn ghost" href="contact.html#calendrier">Voir les dates libres</a></div>
+</div>
+</div></section>
+
+<section id="sejours" class="band block"><div class="wrap split flip">
+<div class="arch"><img src="photos/lieu-vue-piscine.jpg" alt="La piscine et les montagnes, vues depuis la terrasse" style="object-position:50% 45%" loading="lazy"></div>
+<div class="intro">
+<span class="tag soon" style="justify-self:start">Prochainement</span>
+<h2>Séjourner au domaine</h2>
+<div class="rule"></div>
+<p>Quelques chambres permettent de dormir sur place, pour prolonger une formation, un brunch ou une fête.</p>
+<div class="actions" style="margin-top:.6rem"><a class="btn" href="contact.html#calendrier">Voir les disponibilités</a></div>
+</div>
+</div></section>
+</main>
+
+<footer class="foot"><div class="wrap">
+<div class="cols">
+<div><h4>Nous trouver</h4><p>À côté de Marrakech<br>Route RP2017, près de la station Afriquia<br><a href="https://www.google.com/maps/search/?api=1&amp;query=31.46699,-7.87174" target="_blank" rel="noopener">Itinéraire Google Maps</a></p></div>
+<div><h4>Nous contacter</h4><p>Téléphone et WhatsApp<br><span style="font-size:1.15rem;letter-spacing:.04em">+212 6 66 10 89 41</span><br><a href="mailto:domaine.apolo@gmail.com">domaine.apolo@gmail.com</a></p></div>
+<div><h4>Nous suivre</h4><p><a href="https://www.instagram.com/domaine.apolo.marrakech/" target="_blank" rel="noopener">@domaine.apolo.marrakech</a><br>Les dates des formations et brunchs y sont annoncées en premier.</p></div>
+</div>
+<div class="motto">Art · Connexion · Excellence</div>
+</div></footer>
+<script>(function(){function up(){try{window.scrollTo(0,0);document.documentElement.scrollTop=0;document.body.scrollTop=0;}catch(e){}}
+try{if("scrollRestoration" in history)history.scrollRestoration="manual";}catch(e){}
+if(!location.hash){up();document.addEventListener("DOMContentLoaded",up);window.addEventListener("load",function(){up();setTimeout(up,60);setTimeout(up,300);});window.addEventListener("pageshow",up);}
+document.querySelectorAll(".nav a,.brand").forEach(function(a){a.addEventListener("click",function(e){var h=a.getAttribute("href")||"",p=location.pathname.split("/").pop()||"index.html";if(h===p||(h==="index.html"&&p==="")){e.preventDefault();window.scrollTo({top:0,behavior:"smooth"});var t=document.querySelector(".top"),m=document.querySelector(".menu-btn");if(t&&t.classList.contains("open")){t.classList.remove("open");if(m){m.setAttribute("aria-expanded","false");m.textContent="Menu";}}}});});})();</script>
+<script>(function(){var b=document.querySelector(".menu-btn"),h=document.querySelector(".top");if(!b||!h)return;b.addEventListener("click",function(){var o=h.classList.toggle("open");b.setAttribute("aria-expanded",o?"true":"false");b.textContent=o?"Fermer":"Menu";});})();</script>
+</body>
+</html>
