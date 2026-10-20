@@ -142,8 +142,8 @@ input,select,textarea{font:inherit;font-size:1rem;letter-spacing:normal;text-tra
 var DATES = [
   {type:'stage', start:'2026-11-11', end:'2026-11-14', titre:'Formation & perfectionnement', detail:'4 jours'},
   {type:'stage', start:'2026-12-07', end:'2026-12-10', titre:'Formation & perfectionnement', detail:'4 jours'},
-  /* Brunch chaque dimanche : « until » est la dernière date générée, à repousser ou à raccourcir. */
-  {type:'brunch', every:'sunday', start:'2026-11-01', until:'2027-10-31', titre:'Brunch spectacle', detail:'Brunch et spectacle équestre'}
+  /* Brunch un dimanche sur deux (step:14) : « until » est la dernière date générée, à repousser ou à raccourcir. */
+  {type:'brunch', every:'sunday', step:14, start:'2026-11-08', until:'2027-10-31', titre:'Brunch spectacle', detail:'Brunch et spectacle équestre'}
 ];
 /* Plus tard : coller ici l'adresse « intégrer » de l'agenda Google public du domaine. */
 var AGENDA_GOOGLE = '';
@@ -154,7 +154,7 @@ var AGENDA_GOOGLE = '';
   function key(x){return x.getFullYear()*10000+(x.getMonth()+1)*100+x.getDate();}
   var today=new Date(); today=new Date(today.getFullYear(),today.getMonth(),today.getDate());
   var byDay={};
-  DATES.forEach(function(e){var pas=e.every==='sunday'?7:1, fin=d(e.every?e.until:e.end);for(var x=d(e.start);x<=fin;x.setDate(x.getDate()+pas)){byDay[key(x)]=e;}});
+  DATES.forEach(function(e){var pas=e.step||(e.every==='sunday'?7:1), fin=d(e.every?e.until:e.end);for(var x=d(e.start);x<=fin;x.setDate(x.getDate()+pas)){byDay[key(x)]=e;}});
   var view=new Date(today.getFullYear(),today.getMonth(),1);
   var days=document.getElementById('days'), title=document.getElementById('mtitle');
   function render(){
@@ -179,7 +179,7 @@ var AGENDA_GOOGLE = '';
   DATES.filter(function(e){return d(e.every?e.until:e.end)>=today;}).sort(function(a,b){return d(a.start)-d(b.start);}).forEach(function(e){
     var s=d(e.start),f=d(e.end||e.start),li=document.createElement('li'),dot=document.createElement('i'),t=document.createElement('div');
     dot.style.background=TYPES[e.type].c;
-    var quand=e.every?('Tous les dimanches dès le '+(s.getDate()===1?'1er':s.getDate())+' '+MOIS[s.getMonth()]):(+s===+f)?('Le '+s.getDate()+' '+MOIS[s.getMonth()]):('Du '+s.getDate()+(s.getMonth()!==f.getMonth()?' '+MOIS[s.getMonth()]:'')+' au '+f.getDate()+' '+MOIS[f.getMonth()]);
+    var quand=e.every?((e.step===14?'Un dimanche sur deux dès le ':'Tous les dimanches dès le ')+(s.getDate()===1?'1er':s.getDate())+' '+MOIS[s.getMonth()]):(+s===+f)?('Le '+s.getDate()+' '+MOIS[s.getMonth()]):('Du '+s.getDate()+(s.getMonth()!==f.getMonth()?' '+MOIS[s.getMonth()]:'')+' au '+f.getDate()+' '+MOIS[f.getMonth()]);
     var st=document.createElement('strong');st.textContent=e.titre;
     var sp=document.createElement('span');sp.textContent=quand+(e.detail?' · '+e.detail:'');
     t.appendChild(st);t.appendChild(sp);li.appendChild(dot);li.appendChild(t);list.appendChild(li);
