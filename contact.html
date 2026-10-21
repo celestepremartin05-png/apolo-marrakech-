@@ -117,9 +117,10 @@ input,select,textarea{font:inherit;font-size:1rem;letter-spacing:normal;text-tra
 <option>Formation / perfectionnement</option><option>Brunch spectacle</option><option>Événement privé</option><option>Séjour</option><option>Autre</option>
 </select></label>
 <div class="row">
-<label for="d">Date souhaitée<input id="d" type="date"></label>
-<label for="p">Nombre de personnes<input id="p" type="number" min="1" inputmode="numeric" placeholder="2"></label>
+<label for="d">Date de début<input id="d" type="date"></label>
+<label for="d2">Date de fin<input id="d2" type="date"></label>
 </div>
+<label for="p">Nombre de personnes<input id="p" type="number" min="1" inputmode="numeric" placeholder="2"></label>
 <label for="m">Message<textarea id="m" rows="4" placeholder="Votre niveau à cheval, vos questions…"></textarea></label>
 <div class="actions"><a class="btn" id="gmail" href="https://mail.google.com/mail/?view=cm&fs=1&to=domaine.apolo@gmail.com" target="_blank" rel="noopener">Envoyer avec Gmail</a><button class="btn ghost" id="copy" type="button">Copier le message</button></div>
 <p class="note" id="copied" style="margin:0" aria-live="polite">Le message est déjà rédigé : il ne reste qu'à appuyer sur Envoyer. Si rien ne s'ouvre, copiez le message et collez-le dans un e-mail à <strong>domaine.apolo@gmail.com</strong>.</p>
@@ -192,17 +193,21 @@ var AGENDA_GOOGLE = '';
     cal.replaceChildren(fr);
     var lk=document.getElementById('cal-link'); lk.hidden=false; lk.querySelector('a').href=AGENDA_GOOGLE;
   }
-  var ids=['pn','n','t','d','p','m'], gm=document.getElementById('gmail'), full='';
+  var ids=['pn','n','t','d','d2','p','m'], gm=document.getElementById('gmail'), full='';
   function val(i){var e=document.getElementById(i);return e?e.value.trim():''}
   function update(){
     var nom=(val('pn')+' '+val('n')).trim();var parts=['Bonjour'+(nom?', je suis '+nom:'')+'.','Demande : '+val('t')+'.'];
-    if(val('d')){var x=val('d').split('-');parts.push('Date souhaitée : '+x[2]+'/'+x[1]+'/'+x[0]+'.');}
+    function fr(v){var x=v.split('-');return x[2]+'/'+x[1]+'/'+x[0];}
+    if(val('d')&&val('d2')) parts.push('Du '+fr(val('d'))+' au '+fr(val('d2'))+'.');
+    else if(val('d')) parts.push('Date de début : '+fr(val('d'))+'.');
+    else if(val('d2')) parts.push('Date de fin : '+fr(val('d2'))+'.');
     if(val('p')) parts.push('Nombre de personnes : '+val('p')+'.');
     if(val('m')) parts.push(val('m'));
     var sub=encodeURIComponent('Demande : '+val('t')), body=encodeURIComponent(parts.join(' '));
     gm.href='https://mail.google.com/mail/?view=cm&fs=1&to=domaine.apolo@gmail.com&su='+sub+'&body='+body;
     full='À : domaine.apolo@gmail.com\nObjet : Demande : '+val('t')+'\n\n'+parts.join(' ');
   }
+  document.getElementById('d').addEventListener('change',function(){var e=document.getElementById('d2');e.min=this.value;if(e.value&&e.value<this.value)e.value=this.value;update();});
   ids.forEach(function(i){var e=document.getElementById(i);e.addEventListener('input',update);e.addEventListener('change',update);});
   document.getElementById('copy').addEventListener('click',function(){
     var ok=function(){document.getElementById('copied').textContent='Message copié. Collez-le dans un e-mail à domaine.apolo@gmail.com.';};
